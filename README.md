@@ -24,8 +24,7 @@ In modern data-driven applications and smart IOT systems, streaming data pipelin
 
 In this context, comes our project which is a part of a bigger project to create a cutting edge IOT system that can mesure and notify users in real time about the variations of water sources quality.
 
-In reality, the full project was composed of 3 main phases :
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A) Hardware part where a physical system was supposed to be put in place and from it we catch sensors data of water.  
+In reality, the full project was composed of 3 main phases : A) Hardware part where a physical system was supposed to be put in place and from it we catch sensors data of water.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B) My actual contribution to the full project where a streaming data pipeline where needed to cmmunicated the sensed data, process it and display it into a dashboard  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C) The creation of a large scale web application to handle the dashboarding of the streamed processed data.
 
