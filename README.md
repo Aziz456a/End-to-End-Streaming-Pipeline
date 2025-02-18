@@ -41,7 +41,7 @@ This project showcases the B part of the project and as I worked separetly I nee
 
 ![Capture d'écran 2025-02-18 160029](https://github.com/user-attachments/assets/2f6c84f9-4f45-416f-b2fe-6039662e2a31)
 
-As we can see in the architecture above, the pipeline can be described as:
+As we can see in the architecture above, the pipeline can be described as the following:
 
 - Raw Data is ingested from an excel file using the script (**producer.py**) which actually generates a pandas dataframe from the excel file raw data, loops over it and sends the records progressively to a Kafka topic. This step ensures that new data is continuously fed into the system.
 - Kafka acts as a distributed messaging platform to receive and buffer data. In fact, Kafka buffers incoming data in a topic. Multiple consumers can subscribe to this topic to process data in parallel.
