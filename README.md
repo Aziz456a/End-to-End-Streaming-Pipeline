@@ -55,4 +55,31 @@ Architecture
 
 ![Capture d'écran 2025-02-18 160029](https://github.com/user-attachments/assets/2f6c84f9-4f45-416f-b2fe-6039662e2a31)
 
+As we can see in the architecture above, the pipeline can be described as:
+
+-Raw Data is ingested from an excel file using the script (producer.py) which actually generates a pandas dataframe from the excel file  raw data, loops over it  and sends the records progressively  to a Kafka topic.
+This step ensures that new data is continuously fed into the system.
+
+-Kafka acts as a distributed messaging platform to receive and buffer data.
+In fact Kafka buffers incoming data in a topic.Multiple consumers can subscribe to this topic to process data in parallel.
+-Spark processes data in real-time (e.g., filtering, transformations,...) and sends the results to kafka again.
+-Avro is used to efficiencly serialize the raw data and make a back up for it.
+The avaro_test.py script serializes the streaming data into Avro format for backup or archival. It behaves as a second consumer from the kafka topics beside the spark consumer.
+This ensures data can be restored or reprocessed if needed (e.g., compliance or historical analysis).
+-InfluxDB stores processed data in a time-series database for analytics.This is handled using the script influx_test.py
+-DynamoDB (in AWS) stores processed data in a NoSQL store for real-time dashboards.
+In fact, The cloud_amaz.py uses a dedicated python client librairy to implement the logic of sending data to the dynamodb instance.
+
+Features
+
+Scalable & Fault-Tolerant ingestion with Kafka.
+Real-Time Processing using Python and Spark streaming.
+Flexible Storage and High Availibility:
+    InfluxDB for time-series data
+    DynamoDB for fast NoSQL queries
+Data Archiving and reduddancy with Avro format.
+Extensibility to plug in other data sinks or sources.
+
+
+
 
