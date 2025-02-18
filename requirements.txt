@@ -1,0 +1,6 @@
+
+pyspark
+confluent-kafka
+avro-python3
+boto3
+influxdb-client
